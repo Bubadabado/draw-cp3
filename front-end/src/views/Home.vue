@@ -1,13 +1,8 @@
 <template>
 
 <div class="home">
-  <section class="image-gallery">
-    <div class="image" v-for="item in items" :key="item.id">
-      <h2>{{item.title}}</h2>
-      <!--<p>{{item.description}}</p>-->
-      <img :src="item.path" />
-    </div>
-  </section>
+  <h3>Home</h3>
+  <p>This is a drawing app. Go to the drawing page and use the tools to create art. The image can then be downloaded. If you would like to upload it to the database choose a file and press the upload button.</p>
 </div>
 </template>
 

@@ -1,27 +1,6 @@
 <template>
 <div class="admin">
-      <h1>The Admin Page!</h1>
-    <div class="heading">
-      <div class="circle">1</div>
-      <h2>Add an Item</h2>
-    </div>
-    <div class="add">
-      <div class="form">
-        <input v-model="title" placeholder="Title">
-	<!--<textarea v-model="description" placeholder="Description" />-->
-        <p></p>
-        <input type="file" name="photo" @change="fileChanged">
-        <button @click="upload">Upload</button>
-      </div>
-      <div class="upload" v-if="addItem">
-        <h2>{{addItem.title}}</h2>
-        <img :src="addItem.path" />
-      </div>
-    </div>
-    <div class="heading">
-      <div class="circle">2</div>
-      <h2>Edit/Delete an Item</h2>
-    </div>
+    <h3>Edit or Delete a Drawing from the Gallery</h3>
     <div class="edit">
       <div class="form">
         <input v-model="findTitle" placeholder="Search">
@@ -55,7 +34,6 @@ export default {
       items: [],
       findTitle: "",
       findItem: null,
-      //description: null,
     }
   },
   computed: {
@@ -78,7 +56,6 @@ export default {
         let r1 = await axios.post('/api/photos', formData);
         let r2 = await axios.post('/api/items', {
           title: this.title,
-          //description: this.description,
           path: r1.data.path
         });
         this.addItem = r2.data;
@@ -113,7 +90,6 @@ export default {
       try {
         await axios.put("/api/items/" + item._id, {
           title: this.findItem.title,
-//          description: this.findItem.description,
         });
         this.findItem = null;
         this.getItems();
@@ -194,4 +170,5 @@ button {
   background-color: #5BDEFF;
   color: #fff;
 }
+
 </style>

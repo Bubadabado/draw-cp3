@@ -1,21 +1,23 @@
 <template>
 <div id="app">
   <div class="header">
-    <router-link to="/">
-      <div class="logo">
-        <img src="/ordinary.png">
-      </div>
-    </router-link>
+    <!--<router-link to="/">
+    </router-link>-->
     <div class="title">
-      <h1>Museum of Ordinary Objects</h1>
+      <h1>Drawing App</h1>
+    </div>
+    <div class="navigation">
+      <router-link class="nav-button" to="/">Home</router-link> |
+      <router-link class="nav-button" to="/draw">Draw</router-link> |
+      <router-link class="nav-button" to="/gallery">Gallery</router-link> | 
+      <router-link class="nav-button" to="/admin">Edit</router-link>
     </div>
   </div>
   <div class="content">
     <router-view />
   </div>
-  <div class="footer">
-    <router-link to="/admin">Admin</router-link> | 
-    <a href="https://github.com/BYUCS260/museum-Bubadabado">Github Repo</a>
+  <div class="footer"> 
+    <a href="https://github.com/Bubadabado/draw-cp3">Github Repository</a>
   </div>
 </div>
 </template>
@@ -26,7 +28,7 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Courier-new', sans-serif;
   font-size: 16px;
   background: #fff;
   padding: 0px;
@@ -35,10 +37,19 @@ body {
 
 /* Header */
 .header {
-  display: flex;
-  padding: 10px 100px 0px 100px;
-  background-color: #5BDEFF;
-  color: #1C454F;
+  /*display: flex;*/
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 10px 100px 16px 100px;
+  background-color: #441c44;
+  color: #f0eeee;
+  text-shadow: 0 3px 4px #220d22;
+  box-shadow: 0 3px 4px rgb(105, 105, 105);
+}
+
+.nav-button {
+  color: rgb(224, 224, 224);
+  text-decoration: none;
 }
 
 .title {
@@ -46,7 +57,7 @@ body {
 }
 
 .title h1 {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .content {
@@ -59,7 +70,13 @@ body {
   height: 50px;
   padding: 20px 100px 0px 100px;
   background: #e3e3e3;
-  font-size: 12px;
+  font-size: 16px;
+  text-align: center;
+  margin: auto;
+  width: 60%;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #441c44;
 }
 
 .footer a {
